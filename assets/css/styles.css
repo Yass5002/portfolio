@@ -1,0 +1,804 @@
+/* Extracted styles from yassine_portfolio.html
+     Local fonts: load the shipped TTF files in assets/fonts/chakra-petch/
+     We register the four weights used by the site (400/500/600/700).
+*/
+
+/* Chakra Petch - local TTF fallbacks (serves TTF; consider adding WOFF/WOFF2 later)
+     Files expected:
+         assets/fonts/chakra-petch/ChakraPetch-Regular.ttf   -> 400
+         assets/fonts/chakra-petch/ChakraPetch-Medium.ttf    -> 500
+         assets/fonts/chakra-petch/ChakraPetch-SemiBold.ttf  -> 600
+         assets/fonts/chakra-petch/ChakraPetch-Bold.ttf      -> 700
+*/
+@font-face {
+    font-family: 'Chakra Petch';
+    src: url('../fonts/chakra-petch/ChakraPetch-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Chakra Petch';
+    src: url('../fonts/chakra-petch/ChakraPetch-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Chakra Petch';
+    src: url('../fonts/chakra-petch/ChakraPetch-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Chakra Petch';
+    src: url('../fonts/chakra-petch/ChakraPetch-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* GT America local subset for nav links (Standard family) */
+@font-face {
+    font-family: 'GT America';
+    src: url('../fonts/GT-America/GT-America-Standard-Regular-Trial.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'GT America';
+    src: url('../fonts/GT-America/GT-America-Standard-Medium-Trial.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'GT America';
+    src: url('../fonts/GT-America/GT-America-Standard-Bold-Trial.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #ffffff;
+    --bg-secondary: #f8f8f8;
+    --text: #282828;
+    --text-secondary: #504945;
+    --text-tertiary: #969696;
+    --accent: #d4af37;
+    --accent-hover: #c49b2e;
+    --accent-light: #f4e4a6;
+    --border: #e0e0e0;
+    --shadow: rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: 'Iowan Old Style BT', Georgia, serif;
+    font-size: clamp(17px, 1.8vw, 19px);
+    line-height: 1.75;
+    color: var(--text);
+    background-color: var(--bg);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1100;
+    border-bottom: 1px solid var(--border);
+    transition: transform 0.3s ease;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-small {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text);
+    text-decoration: none;
+    transition: opacity 0.3s;
+    padding: 0.3rem 0.6rem;
+    border: 1px solid var(--text);
+}
+
+.logo-small:hover {
+    opacity: 0.7;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 15px;
+    font-family: 'GT America', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+/* Desktop nav: animate like mobile nav links (slide + animated underline) */
+nav a:hover {
+    color: var(--accent);
+    transform: translateX(4px);
+    text-decoration: none;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1002;
+    position: relative;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu-overlay.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.mobile-menu-overlay nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.mobile-menu-overlay nav a {
+    font-size: 20px; /* make mobile links ~20px as requested */
+    font-weight: 400; /* less bold on mobile */
+    color: var(--text);
+    text-decoration: none;
+    font-family: 'GT America', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    letter-spacing: -0.02em;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+.mobile-menu-overlay nav a:hover {
+    color: var(--accent);
+    transform: translateX(4px);
+}
+
+.mobile-menu-overlay nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.mobile-menu-overlay nav a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    padding: 8rem 0 4rem;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in;
+}
+
+.logo-container {
+    max-width: 100%;
+    margin-inline: auto;
+    padding-block: 1rem 1.4rem;
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.logo {
+    position: relative;
+    overflow: hidden;
+    background: white;
+    color: black;
+    border: solid 1px white;
+    backface-visibility: hidden;
+    animation: float 7s ease-in-out infinite;
+    display: inline-block;
+    font-size: clamp(2.5em, 8vw, 3.4em);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.3;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 400;
+}
+
+.logo:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    aspect-ratio: 1;
+    background: linear-gradient(90deg, #565151, #d2caca);
+    mix-blend-mode: screen;
+    animation: gradRotate 8s linear infinite;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(5px); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes gradRotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.hero-subtitle {
+    font-size: 1.35rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+.hero-description {
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(180deg, #F3F2F2 0%, #E6E6E6 87.5%);
+    color: #000;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    background: var(--bg-secondary);
+}
+
+/* Sections */
+section {
+    padding: 4rem 0;
+    animation: fadeIn 0.8s ease-in;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    font-style: italic;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+/* About Section */
+.about-content {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.85;
+    color: var(--text-secondary);
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+.about-text strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Education Section */
+.education-timeline {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.education-card {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px var(--shadow);
+}
+
+.education-header {
+    margin-bottom: 1rem;
+}
+
+.education-degree {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.education-school {
+    font-size: 1.05rem;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.education-location {
+    font-size: 0.95rem;
+    color: var(--text-tertiary);
+    margin-bottom: 0.3rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.education-date {
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-style: italic;
+}
+
+.education-details {
+    margin-top: 1rem;
+}
+
+.education-focus {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.education-modules {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-4px);
+}
+
+.skill-category h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    background: var(--bg);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    gap: 2.5rem;
+}
+
+.project-card {
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px var(--shadow);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+}
+
+.project-links {
+    display: flex;
+    gap: 0.8rem;
+    flex-shrink: 0;
+}
+
+.project-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.project-link:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+.project-description {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.75;
+    font-size: 1.05rem;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-badge {
+    background: var(--bg);
+    padding: 0.3rem 0.7rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Contact Section */
+.contact-content {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-text {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text);
+    transition: background 0.3s;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.contact-item:hover {
+    background: var(--border);
+}
+
+.contact-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* Footer */
+footer {
+    padding: 3rem 0 2rem;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    margin-top: 4rem;
+}
+
+.footer-content {
+    color: var(--text-tertiary);
+    font-size: 0.9rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.social-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: var(--accent);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    header {
+        /* Use sticky header on narrow viewports so it stays at top but remains in flow */
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1100;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 6rem 0 3rem;
+    }
+
+    .logo {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-header {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .project-links {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
