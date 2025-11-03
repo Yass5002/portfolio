@@ -68,6 +68,16 @@
     padding: 0;
 }
 
+::selection {
+    background: var(--accent);
+    color: #ffffff;
+}
+
+::-moz-selection {
+    background: var(--accent);
+    color: #ffffff;
+}
+
 :root {
     --bg: #ffffff;
     --bg-secondary: #f8f8f8;
