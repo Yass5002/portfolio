@@ -1,3 +1,5 @@
+/* jshint esversion: 8 */
+
 // Extracted JS from yassine_portfolio.html
 
 // Mobile menu toggle
@@ -115,7 +117,6 @@ const START_YEAR = 2024;
 function calculateExperience() {
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
-    const currentMonth = currentDate.getMonth();
     const yearsDiff = currentYear - START_YEAR;
 
     // If less than 1 year, show months or return 1
