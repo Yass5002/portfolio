@@ -6,4 +6,4 @@ This repository holds the source code for my personal portfolio website.
 
 ---
 
-![Portfolio Preview](og-image.png)
+![Portfolio Preview](og-image.jpg)
