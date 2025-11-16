@@ -726,12 +726,7 @@ footer {
     margin-bottom: 1rem;
 }
 
-.social-link {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s;
-}
+
 
 .social-link:hover {
     color: var(--accent);
