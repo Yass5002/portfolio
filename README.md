@@ -2,7 +2,7 @@
 
 This repository holds the source code for my personal portfolio website.
 
-**Live Site: [yass.qzz.io](https://yass.qzz.io/)**
+**Live Site: [yass5002.github.io/portfolio](https://yass5002.github.io/portfolio/)**
 
 ---
 

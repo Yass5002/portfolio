@@ -1,4 +1,4 @@
-# robots.txt for https://yass.qzz.io/
+# robots.txt for https://yass5002.github.io/portfolio/
 
 User-agent: *
 Allow: /
@@ -23,4 +23,4 @@ Allow: /
 Disallow: /assets/fonts/
 
 # Sitemap
-Sitemap: https://yass.qzz.io/sitemap.xml
+Sitemap: https://yass5002.github.io/portfolio/sitemap.xml
