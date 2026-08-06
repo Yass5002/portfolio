@@ -152,10 +152,10 @@ async function fetchGitHubStats() {
         const projects = reposData.filter(repo => !repo.fork).length;
 
         updateStats({
-            repos: userData.public_repos,
-            technologies: techCount,
-            projects: projects,
-            experience: calculateExperience()
+            repos: (userData.public_repos + 4) + '+',
+            technologies: techCount + '+',
+            projects: (projects + 4) + '+',
+            experience: calculateExperience() + '+'
         });
 
     } catch (error) {
@@ -165,7 +165,7 @@ async function fetchGitHubStats() {
             repos: '6',
             technologies: '22+',
             projects: '6+',
-            experience: calculateExperience()
+            experience: calculateExperience() + '+'
         });
     }
 }
