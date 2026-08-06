@@ -152,9 +152,9 @@ async function fetchGitHubStats() {
         const projects = reposData.filter(repo => !repo.fork).length;
 
         updateStats({
-            repos: (userData.public_repos + 4) + '+',
+            repos: userData.public_repos + '+',
             technologies: techCount + '+',
-            projects: (projects + 4) + '+',
+            projects: projects + '+',
             experience: calculateExperience() + '+'
         });
 
