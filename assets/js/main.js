@@ -153,8 +153,8 @@ async function fetchGitHubStats() {
 
         updateStats({
             repos: userData.public_repos,
-            technologies: techCount + '+',
-            projects: projects + '+',
+            technologies: techCount,
+            projects: projects,
             experience: calculateExperience()
         });
 
@@ -162,9 +162,9 @@ async function fetchGitHubStats() {
         console.error('Error fetching GitHub stats:', error);
         // Fallback to default values
         updateStats({
-            repos: '4',
-            technologies: '15+',
-            projects: '2+',
+            repos: '6',
+            technologies: '22+',
+            projects: '6+',
             experience: calculateExperience()
         });
     }
