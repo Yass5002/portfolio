@@ -1,0 +1,28 @@
+# Yassine El Ouazzani
+
+> Mobile App & Full Stack Developer from Meknès, Morocco.
+
+## Bio
+Yassine El Ouazzani is a software developer specializing in native Android development (Kotlin, Jetpack Compose, MVVM), cross-platform mobile applications (Flutter, Dart), and full-stack web applications. Digital Development graduate from OFPPT - ISTAG BAB TIZIMI with a background in Physical Sciences.
+
+## Core Competencies
+- Mobile: Native Android (Kotlin, Jetpack Compose, MVVM, Material You), Flutter, Dart, Riverpod
+- Web: HTML5, CSS3, JavaScript, Node.js, PHP, MySQL, Responsive Design
+- Backend & Automation: Go (Gin, PostgreSQL, Redis), Python, Selenium, BeautifulSoup, Web Scraping
+- Developer Tools: Git, GitHub, VS Code, Android Studio, IntelliJ IDEA, Postman, Linux
+
+## Featured Projects
+- Sentinel - Dead Man's Switch: High-reliability personal safety companion featuring a Go backend API (Gin, PostgreSQL, Redis) and a Flutter mobile client with OTP authentication and background GPS tracking.
+  - Backend: https://github.com/Yass5002/sentinel-core-api
+  - Frontend: https://github.com/Yass5002/sentinel
+- AL AMAL Medical Laboratory: Professional medical laboratory web platform with service catalog, home sampling booking, and insurer integrations.
+  - Live: https://laboratoirealamal.me/
+  - GitHub: https://github.com/Yass5002/MohamedYakhlif.github.io
+- ORA - Countdown Timer App: Modern, privacy-focused open-source Android countdown timer app with Material You widgets and theme-aware pulsing neon UI.
+  - GitHub: https://github.com/Yass5002/Ora
+
+## Contact & Links
+- Website: https://yssn.tech/
+- GitHub: https://github.com/Yass5002
+- Dev.to: https://dev.to/yass5002
+- Email: yass.elouazzani@outlook.com

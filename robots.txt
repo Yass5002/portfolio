@@ -1,9 +1,9 @@
-# robots.txt for https://yass5002.github.io/portfolio/
+# robots.txt for https://yssn.tech/
 
 User-agent: *
 Allow: /
 
-# Explicitly allow social media crawlers
+# Explicitly allow social media & AI crawlers
 User-agent: facebookexternalhit
 Allow: /
 
@@ -19,8 +19,17 @@ Allow: /
 User-agent: discordbot
 Allow: /
 
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 # Disallow certain files
-Disallow: /assets/fonts/
+# (Fonts and assets are allowed for search engine rendering & CWV)
 
 # Sitemap
-Sitemap: https://yass5002.github.io/portfolio/sitemap.xml
+Sitemap: https://yssn.tech/sitemap.xml

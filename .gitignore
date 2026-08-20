@@ -1,0 +1,11 @@
+# Agent directories and artifacts
+.agents/
+.agent/
+*-audit/
+*-seo-plan/
+
+# Ignore all markdown files except README.md
+*.md
+!README.md
+**/*.md
+!**/README.md
