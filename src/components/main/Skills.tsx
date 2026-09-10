@@ -62,9 +62,9 @@ function SkillPill({ skill }: { skill: Skill }) {
   return (
     <div className="skill-pill">
       {Icon ? (
-        <Icon size={18} className="shrink-0 text-foreground" />
+        <Icon size={18} className="shrink-0 text-foreground" aria-hidden="true" />
       ) : (
-        <span className="skill-dot" />
+        <span className="skill-dot" aria-hidden="true" />
       )}
       <span className="skill-name">{skill.name}</span>
     </div>

@@ -75,7 +75,11 @@ function ProjectCard({ project }: { project: Project }) {
         <p className="project-desc">{project.desc}</p>
         <div className="project-links">
           {project.path && (
-            <Link className="project-detail-btn" href={project.path}>
+            <Link
+              className="project-detail-btn"
+              href={project.path}
+              aria-label={`View details for ${project.title}`}
+            >
               View Details →
             </Link>
           )}
@@ -88,6 +92,7 @@ function ProjectCard({ project }: { project: Project }) {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`${link.label} for ${project.title}`}
               >
                 {isGitHub && <FaGithub size={14} />}
                 {link.label}

@@ -1,22 +1,24 @@
-# Yassine El Ouazzani Portfolio
+# Yassine El Ouazzani
 
-## About Me
-Yassine El Ouazzani is a Full-Stack & Mobile Developer specializing in mobile application development and responsive full-stack web platforms. He has a Specialized Degree in Digital Development (Mobile Applications) from OFPPT - ISTAG Bab Tizimi.
+> Full-Stack & Mobile Developer specializing in native Android, Flutter, and scalable web platforms.
 
-## Tech Stack
-* Mobile: Kotlin, Flutter, Dart, Android SDK
-* Frontend: React, Next.js, HTML5, CSS3, Tailwind CSS
-* Backend & Systems: Go, Python, Flask, TypeScript, Node.js
-* Databases: PostgreSQL, Redis, SQLite, Supabase, Firebase
-* DevOps & Tools: Linux, Docker, Git
+## About
+Yassine El Ouazzani is a software developer focused on building secure mobile applications and full-stack web platforms. He holds a Specialized Degree in Digital Development (Mobile Applications) from OFPPT - ISTAG Bab Tizimi.
 
-## Selected Projects
-* mehro-paste: Fast, zero-knowledge, end-to-end encrypted paste sharing with burn-on-read. Built with Next.js, Libsodium WASM, and Redis.
-* Sentinel: A resilient Dead Man's Switch platform with a Go API backend and Flutter mobile client.
-* ORA: An open-source Android countdown app with Material You design and home screen widgets.
-* Moroccan Educational System: Standardized JSON dataset of the Moroccan national curriculum.
-* Laboratoire AL AMAL: Trilingual production website for an accredited medical analysis laboratory.
+## Core Technical Skills
+- Mobile Development: Kotlin, Flutter, Dart, Android SDK
+- Frontend Engineering: Next.js, React, TypeScript, Tailwind CSS, HTML5, CSS3
+- Backend & Systems: Go, Python, Flask, Node.js, REST APIs
+- Databases & Storage: PostgreSQL, Redis, SQLite, Supabase, Firebase
+- DevOps & Tools: Linux, Docker, Git
 
-## Links
-* Website: https://yssn.tech
-* GitHub: https://github.com/Yass5002
+## Featured Projects
+- [mehro-paste](https://paste.mehro.me): Fast, zero-knowledge, end-to-end encrypted paste sharing with burn-on-read. Built with Next.js, Libsodium WASM, and Redis.
+- [Sentinel](https://github.com/Yass5002/sentinel): Dead Man's Switch platform with a Go API backend and Flutter mobile client featuring real-time GPS tracking and encrypted alert delivery.
+- [ORA](https://github.com/Yass5002/Ora): Open-source Android countdown app with Material You design and home screen widgets.
+- [Moroccan Educational System](https://github.com/Yass5002/moroccan-educational-system): Standardized JSON dataset of the Moroccan national curriculum and continuous assessments.
+- [Laboratoire AL AMAL](https://github.com/Yass5002/alamal): Trilingual production website for an accredited medical analysis laboratory in Meknes.
+
+## External Links
+- [Portfolio Website](https://yssn.tech): Live portfolio website.
+- [GitHub Profile](https://github.com/Yass5002): GitHub profile with open source repositories and development projects.

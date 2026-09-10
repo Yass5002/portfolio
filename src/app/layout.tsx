@@ -86,7 +86,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <Header />
             <ScrollToTop />
             <ChatWidget />
-            {children}
+            <main id="main-content">
+              {children}
+            </main>
             <FadeIn>
               <Footer />
             </FadeIn>
