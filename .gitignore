@@ -6,3 +6,4 @@ CLAUDE.md
 .playwright-mcp/
 *.tsbuildinfo
 resume/
+.vercel
