@@ -1,11 +1,8 @@
-# Agent directories and artifacts
-.agents/
-.agent/
-*-audit/
-*-seo-plan/
-
-# Ignore all markdown files except README.md
-*.md
-!README.md
-**/*.md
-!**/README.md
+node_modules/
+.next/
+.claude/
+CLAUDE.md
+.env.local
+.playwright-mcp/
+*.tsbuildinfo
+resume/

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <radialGradient id="favSphere" cx="32%" cy="28%" r="72%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="42%" stop-color="#9fb2ff" />
+      <stop offset="100%" stop-color="#6c7cf0" />
+    </radialGradient>
+
+    <linearGradient id="favY" x1="25%" y1="20%" x2="75%" y2="85%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="35%" stop-color="#ffe6d6" />
+      <stop offset="70%" stop-color="#ffd2ba" />
+      <stop offset="100%" stop-color="#ff9a76" />
+    </linearGradient>
+
+    <radialGradient id="favSpecular" cx="32%" cy="28%" r="46%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.75" />
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.2" />
+      <stop offset="80%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <circle cx="50" cy="50" r="47" fill="url(#favSphere)" />
+
+  <g transform="rotate(15 50 50)">
+    <path
+      d="M 33 29 L 50 51 L 50 73 M 67 29 L 50 51"
+      fill="none"
+      stroke="url(#favY)"
+      stroke-width="11"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </g>
+
+  <circle cx="50" cy="50" r="47" fill="url(#favSpecular)" pointer-events="none" />
+</svg>
