@@ -12,9 +12,19 @@ export const metadata: Metadata = {
   title: "Yassine El Ouazzani | Software Engineer",
   description:
     "Software engineer specializing in mobile application development with Kotlin and Flutter, alongside full-stack web systems built with Python, Node.js, and TypeScript.",
+  alternates: {
+    canonical: "https://yssn.tech",
+  },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   openGraph: {
     title: "Yassine El Ouazzani | Software Engineer",
@@ -48,6 +58,22 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Yassine El Ouazzani",
+              url: "https://yssn.tech",
+              jobTitle: "Software Engineer",
+              description: "Software engineer specializing in mobile application development with Kotlin and Flutter, alongside full-stack web systems built with Python, Node.js, and TypeScript.",
+              sameAs: [
+                "https://github.com/Yass5002",
+              ]
+            })
+          }}
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.classList.add('dark')}}catch(e){}})();`,

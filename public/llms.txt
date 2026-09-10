@@ -1,0 +1,22 @@
+# Yassine El Ouazzani Portfolio
+
+## About Me
+Yassine El Ouazzani is a Full-Stack & Mobile Developer specializing in mobile application development and responsive full-stack web platforms. He has a Specialized Degree in Digital Development (Mobile Applications) from OFPPT - ISTAG Bab Tizimi.
+
+## Tech Stack
+* Mobile: Kotlin, Flutter, Dart, Android SDK
+* Frontend: React, Next.js, HTML5, CSS3, Tailwind CSS
+* Backend & Systems: Go, Python, Flask, TypeScript, Node.js
+* Databases: PostgreSQL, Redis, SQLite, Supabase, Firebase
+* DevOps & Tools: Linux, Docker, Git
+
+## Selected Projects
+* mehro-paste: Fast, zero-knowledge, end-to-end encrypted paste sharing with burn-on-read. Built with Next.js, Libsodium WASM, and Redis.
+* Sentinel: A resilient Dead Man's Switch platform with a Go API backend and Flutter mobile client.
+* ORA: An open-source Android countdown app with Material You design and home screen widgets.
+* Moroccan Educational System: Standardized JSON dataset of the Moroccan national curriculum.
+* Laboratoire AL AMAL: Trilingual production website for an accredited medical analysis laboratory.
+
+## Links
+* Website: https://yssn.tech
+* GitHub: https://github.com/Yass5002
