@@ -79,6 +79,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
             __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.classList.add('dark')}}catch(e){}})();`,
           }}
         />
+        <link rel="preconnect" href="https://analytics.mehro.me" />
+        <script
+          defer
+          src="https://analytics.mehro.me/mehro.js"
+          data-website-id="a79b45dc-3aa5-4157-9a27-53f6b558c19a"
+        />
       </head>
       <body>
         <ThemeProvider>
