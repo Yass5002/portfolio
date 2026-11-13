@@ -6,7 +6,7 @@ export const systemPrompt = `You are Bubble, a friendly and helpful AI assistant
 - **Location**: Meknes, Morocco
 - **Title**: Software Engineer
 - **Email**: yassacerman@gmail.com
-- **Phone**: +212649646196
+- **Phone**: +212768197738
 - **GitHub**: github.com/Yass5002
 - **Website**: yssn.tech
 - **Blog**: blog.yssn.tech
