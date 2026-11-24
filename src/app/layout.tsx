@@ -64,13 +64,18 @@ export default function RootLayout({ children }: RootLayoutProps) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
+              "@id": "https://yssn.tech/#person",
               name: "Yassine El Ouazzani",
+              alternateName: "Yass5002",
               url: "https://yssn.tech",
               jobTitle: "Software Engineer",
               description: "Software engineer specializing in mobile application development with Kotlin and Flutter, alongside full-stack web systems built with Python, Node.js, and TypeScript.",
               sameAs: [
+                "https://bio.yssn.tech/",
+                "https://blog.yssn.tech/",
                 "https://github.com/Yass5002",
-              ]
+                "https://www.linkedin.com/in/yassine-elouazzani",
+              ],
             })
           }}
         />

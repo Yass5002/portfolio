@@ -21,4 +21,5 @@ Yassine El Ouazzani is a software developer focused on building secure mobile ap
 
 ## External Links
 - [Portfolio Website](https://yssn.tech): Live portfolio website.
+- [Bio & Links Card](https://bio.yssn.tech): Bilingual developer profile, direct contact, and downloadable CV.
 - [GitHub Profile](https://github.com/Yass5002): GitHub profile with open source repositories and development projects.

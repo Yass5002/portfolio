@@ -1,6 +1,6 @@
 import Link from "next/link";
 import LogoIcon from "@/components/common/LogoIcon";
-import { FaGithub, FaDownload } from "react-icons/fa";
+import { FaGithub, FaDownload, FaLink } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -22,10 +22,19 @@ export default function Footer() {
             className="footer-github-link"
             href="https://github.com/Yass5002"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="me noopener noreferrer"
           >
             <FaGithub size={18} />
             GitHub
+          </Link>
+          <Link
+            className="footer-github-link"
+            href="https://bio.yssn.tech/"
+            target="_blank"
+            rel="me noopener noreferrer"
+          >
+            <FaLink size={16} />
+            Bio
           </Link>
           <div className="footer-divider" />
           <a
