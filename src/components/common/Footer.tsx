@@ -34,7 +34,7 @@ export default function Footer() {
             rel="me noopener noreferrer"
           >
             <FaLink size={16} />
-            Bio
+            Links
           </Link>
           <div className="footer-divider" />
           <a
