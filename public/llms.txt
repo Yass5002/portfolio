@@ -13,11 +13,12 @@ Yassine El Ouazzani is a software developer focused on building secure mobile ap
 - DevOps & Tools: Linux, Docker, Git
 
 ## Featured Projects
+- [Sentinel](https://github.com/Yass5002/sentinel): Dead Man's Switch platform with a Go API backend and Flutter mobile client featuring real-time GPS tracking and automated email alerts.
 - [mehro-paste](https://paste.mehro.me): Fast, zero-knowledge, end-to-end encrypted paste sharing with burn-on-read. Built with Next.js, Libsodium WASM, and Redis.
-- [Sentinel](https://github.com/Yass5002/sentinel): Dead Man's Switch platform with a Go API backend and Flutter mobile client featuring real-time GPS tracking and encrypted alert delivery.
+- [Magisk Hub](https://magisk.yssn.tech): Directory of Android root modules that stays up to date from each project's releases. Built with Astro, TypeScript, Python, and GitHub Actions.
 - [ORA](https://github.com/Yass5002/Ora): Open-source Android countdown app with Material You design and home screen widgets.
-- [Moroccan Educational System](https://github.com/Yass5002/moroccan-educational-system): Standardized JSON dataset of the Moroccan national curriculum and continuous assessments.
 - [Laboratoire AL AMAL](https://github.com/Yass5002/alamal): Trilingual production website for an accredited medical analysis laboratory in Meknes.
+- [Moroccan Educational System](https://github.com/Yass5002/moroccan-educational-system): Standardized JSON dataset of the Moroccan national curriculum and continuous assessments.
 
 ## External Links
 - [Portfolio Website](https://yssn.tech): Live portfolio website.

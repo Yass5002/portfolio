@@ -43,6 +43,14 @@ Yassine is a software engineer specializing in mobile application development wi
 - Atomic burn-on-read via Redis DEL, auto-expiry via Redis TTL, and anti-crawler handshake
 - Live: paste.mehro.me | GitHub: github.com/Yass5002/mehro-paste
 
+### Magisk Hub - Android Root Module Directory (Open Source)
+- **Tech**: Astro, TypeScript, Tailwind CSS, Python, GitHub Actions, GitHub GraphQL API, Umami
+- Directory of modules for Magisk, KernelSU and APatch, built as a static site
+- A scheduled job checks GitHub releases every six hours, picks up new versions and removes archived or abandoned projects
+- Default order ranks modules by recent download clicks
+- About 4,600 download clicks in the month to November 28, 2026
+- Live: magisk.yssn.tech | GitHub: github.com/Yass5002/magisk-hub
+
 ### ORA - Android Countdown App (Open Source)
 - **Tech**: Kotlin, Android SDK, ViewBinding, Material Design 3, Room SQLite, LiveData, AppWidgets, AlarmManager
 - Material Design 3 with custom canvas countdown border animations and per-event color picker
@@ -57,18 +65,11 @@ Yassine is a software engineer specializing in mobile application development wi
 - Zero framework overhead, sub-second load times on mobile 3G/4G
 - GitHub: github.com/Yass5002/alamal
 
-### mehro - Personal Portfolio & Real-time Digital Hub
-- **Tech**: Node.js, Express, discord.js, SQLite, better-sqlite3, HTML5, CSS3
-- Persistent Discord Gateway bot with privileged intents for live user presence and status streaming
-- Real-time Spotify listening activity streamed directly via Discord RPC (zero Spotify API dependency) with synced lyrics via lrclib.net
-- Self-hosted, privacy-respecting view counter with custom pixel-art animations and zero third-party trackers
-- Live: mehro.me | GitHub: github.com/Yass5002/mehro
-
-### Moroccan Educational System - Open Data & Educational Schemas
-- **Tech**: Python, JSON Schema, Data Modeling, Web Scraping, CI Automation
+### Moroccan Educational System - Open Data & Educational Datasets
+- **Tech**: Python, JSON, Data Modeling, Web Scraping, CI Automation
 - Standardized open-source JSON dataset consolidating over 680 lessons across Moroccan middle and high school streams (MEN & BIOF French option)
 - Machine-readable curriculum.json, devoirs.json (DS1-DS3 assessments), and exams.json (national/regional specs)
-- Codified official Baccalaureate weighting algorithm (50% National + 25% Regional + 25% Continuous Assessment) with Python automated validation (validate.py)
+- Codified official Baccalaureate weighting algorithm (50% National + 25% Regional + 25% Continuous Assessment) with an automated Python JSON check (validate.py)
 - GitHub: github.com/Yass5002/moroccan-educational-system
 
 ## Personality & Interests

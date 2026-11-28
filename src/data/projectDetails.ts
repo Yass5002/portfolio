@@ -66,7 +66,7 @@ export const PROJECT_DETAIL_DATA: Record<string, ProjectDetailData> = {
     members: "Solo developer (API + Mobile client)",
     contribution: "100%",
     role: "Full-stack & mobile developer: engineered the system architecture, Go backend API, and Flutter mobile client.",
-    description: "Sentinel is a safety dead man's switch platform engineered for high-risk situations (solo travel, remote fieldwork, personal safety). Users initiate timed safety check-in events accompanied by emergency contacts, GPS coordinates, and encrypted attachment files. If the user fails to check in before the timer elapses, the backend automatically dispatches alert notifications via AWS SES with the user's last known location and uploaded documents.",
+    description: "Sentinel is a safety dead man's switch platform engineered for high-risk situations (solo travel, remote fieldwork, personal safety). Users initiate timed safety check-in events accompanied by emergency contacts, GPS coordinates, and file attachments. If the user fails to check in before the timer elapses, the backend automatically dispatches alert notifications via AWS SES with the user's last known location and uploaded documents.",
     stacks: ["Go 1.24", "Gin", "PostgreSQL", "GORM", "Redis 7", "Flutter", "Dart", "Riverpod", "AWS SES", "AWS S3"],
     links: [
       { label: "GitHub (Mobile)", url: "https://github.com/Yass5002/sentinel" },
@@ -81,7 +81,7 @@ export const PROJECT_DETAIL_DATA: Record<string, ProjectDetailData> = {
         items: [
           "Dual-trigger timer scheduling: utilizes Redis Keyspace Notifications (notify-keyspace-events Ex) for real-time sub-second expiration triggers.",
           "Secondary fallback polling worker sweeps PostgreSQL every 30 seconds to recover any missed expiration events in case of Redis restart.",
-          "Atomic database row-level locking (SELECT FOR UPDATE SKIP LOCKED) guarantees that multiple API replicas never trigger duplicate alert dispatches.",
+          "Each expired event is claimed with a single atomic database update, so concurrent workers do not send the same alert twice.",
         ],
       },
       {
@@ -338,50 +338,74 @@ export const PROJECT_DETAIL_DATA: Record<string, ProjectDetailData> = {
       },
     ],
   },
-  mehro: {
-    title: "mehro",
-    period: "2025",
+  magiskhub: {
+    title: "Magisk Hub",
+    period: "2026",
     members: "Solo developer",
     contribution: "100%",
-    role: "Full-stack developer: designed and deployed a personal portfolio featuring real-time presence aggregation and privacy-first self-hosted analytics.",
-    description: "A personal portfolio and interactive digital hub featuring live Discord presence streaming, real-time Spotify listening activity via Discord RPC with synchronized lyrics, and a self-hosted SQLite view counter for zero-tracking analytics.",
-    stacks: ["Node.js", "Express", "discord.js", "SQLite", "better-sqlite3", "HTML5", "CSS3"],
+    role: "Full-stack developer: built the site, the release sync pipeline, and the download-based ranking.",
+    description: "Magisk Hub is a directory of modules for Magisk, KernelSU and APatch. It is a static site that keeps itself current: a scheduled job checks releases on GitHub, picks up new versions and removes projects that are archived or abandoned. Visitors clicked download about 4,600 times in the past month.",
+    siteNote: "Live at magisk.yssn.tech",
+    stacks: ["Astro", "TypeScript", "Tailwind CSS", "Python", "GitHub Actions", "GitHub GraphQL API", "Umami"],
     links: [
-      { label: "Live ↗", url: "https://mehro.me/" },
-      { label: "GitHub", url: "https://github.com/Yass5002/mehro" },
+      { label: "Live ↗", url: "https://magisk.yssn.tech" },
+      { label: "GitHub", url: "https://github.com/Yass5002/magisk-hub" },
     ],
     images: [
-      "/assets/projects/mehro_thumbnail.png",
+      "/assets/projects/magiskhub_thumbnail.png",
+      "/assets/projects/magiskhub_1_module.png",
+      "/assets/projects/magiskhub_2_categories.png",
     ],
     features: [
       {
-        contributions: [
-          "Built an integrated Node.js / Express backend service running a persistent Discord gateway bot with GuildMembers and GuildPresences privileged intents.",
-          "Streamed real-time user online presence, avatar, custom status, and Spotify listening activity directly from Discord RPC with zero Spotify API dependency.",
-          "Integrated lrclib.net to query and display real-time synchronized song lyrics alongside Spotify scan codes (scannables.scdn.co).",
-          "Engineered a self-hosted, privacy-respecting view counter powered by better-sqlite3, paired with custom pixel-art digit GIF animations.",
-        ],
-        result: [
-          "A dynamic, live portfolio experience that streams real-time developer activity without third-party tracking cookies or external analytics dependencies.",
+        title: "A Catalog That Maintains Itself",
+        items: [
+          "Every six hours, a GitHub Actions job asks GitHub's GraphQL API for the latest release of each module.",
+          "A module is removed when its repository is archived, has had no pushes for about 18 months, or no longer offers a working download.",
+          "New release tags, file names and star counts are written back to each module's record.",
         ],
       },
-    ] as ProjectFeatureNotNumType[],
+      {
+        title: "Ranked by What People Download",
+        items: [
+          "The same job reads the last seven days of download clicks from a self-hosted Umami instance.",
+          "The default order puts the most downloaded modules first and sorts the rest by GitHub stars.",
+          "A module needs at least three recent download clicks to be ranked by popularity.",
+        ],
+      },
+      {
+        title: "No Server, No Database",
+        items: [
+          "Each module is a JSON file in the repository, checked against a schema in CI.",
+          "Astro builds the whole site from those files into static pages.",
+          "Release and ranking updates arrive as commits, so every data change is recorded in Git.",
+        ],
+      },
+      {
+        title: "Finding the Right Module",
+        items: [
+          "Search covers module names, authors, release file names, categories and known aliases.",
+          "A typo-tolerant fallback based on edit distance catches close spellings.",
+          "Modules can be filtered by platform and category, and the filters are kept in the URL.",
+        ],
+      },
+    ] as ProjectFeatureNumType[],
     troubleshooting: [
       {
-        title: "Eliminating Discord Gateway Heartbeat Drops & Preventing API Rate Limiting",
+        title: "A Failed Link Check Could Remove a Working Module",
         found: [
-          "The persistent Discord bot connection frequently encountered WebSocket heartbeat timeouts on mobile networks and transient packet drops. Repeatedly fetching member profiles on every web API request caused HTTP 429 (Too Many Requests) rate limiting from Discord.",
+          "The sync deleted any module whose download link failed its check, and a timeout or server error on a single request was enough. CorePatch was removed this way.",
         ],
         process: [
-          "Implemented an in-memory profile cache with a 5-minute TTL (cachedUserProfile), eliminating redundant user profile network queries.",
-          "Handled Discord gateway reconnection lifecycle events (shardDisconnect, shardResume) with exponential backoff.",
-          "Decoupled real-time Spotify activity parsing (formatSpotify) into synchronous in-memory transformations of cached gateway presence states.",
+          "Added a second attempt and a one-byte GET request as a fallback when the HEAD request fails.",
+          "Kept immediate failure for responses that show the file is gone (404 and 410).",
+          "Added a limit that stops a run before it deletes more than a quarter of the modules.",
         ],
         result: [
-          "Continuous presence synchronization with zero API rate limit violations and instant (<10ms) web endpoint response times.",
+          "CorePatch was restored, and a single temporary error no longer removes a module.",
         ],
         lesson: [
-          "High-frequency client-facing status endpoints must be decoupled from upstream third-party APIs through local gateway state caches.",
+          "An automated job that deletes data should need more than one failed request as evidence.",
         ],
       },
     ],
@@ -393,7 +417,7 @@ export const PROJECT_DETAIL_DATA: Record<string, ProjectDetailData> = {
     contribution: "100%",
     role: "Data engineer: collected, cleaned, structured, and validated Morocco's national curriculum and exam frameworks into open-source JSON datasets.",
     description: "A standardized, developer-ready JSON dataset of the Moroccan national educational curriculum, covering continuous assessments (Devoirs Surveillés) and official certifying unified exam frameworks for both Collège and Lycée levels. Released as open-source under the MIT license to empower EdTech applications, study planners, and GPA calculators.",
-    stacks: ["Python", "JSON Schema", "Data Modeling", "Web Scraping", "Automation", "MIT Open Source"],
+    stacks: ["Python", "JSON", "Data Modeling", "Web Scraping", "Automation", "MIT Open Source"],
     links: [
       { label: "GitHub", url: "https://github.com/Yass5002/moroccan-educational-system" },
     ],
@@ -404,7 +428,7 @@ export const PROJECT_DETAIL_DATA: Record<string, ProjectDetailData> = {
           "Consolidated over 680 lessons across Moroccan middle and high school streams (including standard MEN tracks and International French Option / BIOF).",
           "Structured three core relational JSON datasets: curriculum.json (lesson-by-lesson subject hierarchy), devoirs.json (continuous assessment exam breakdowns for DS1-DS3), and exams.json (national and regional exam specifications).",
           "Codified official certifying exam rules, including coefficients, testing durations, and the Baccalaureate grade weighting algorithm (50% National + 25% Regional + 25% Continuous Assessment).",
-          "Created Python automated validation scripts (validate.py) enforcing schema constraints and preventing data regressions.",
+          "Added a Python script (validate.py) that runs in CI and checks that the data files are present and valid JSON.",
         ],
         result: [
           "An open-source, machine-readable dataset eliminating manual syllabus scraping for educational developers building revision apps, GPA tools, and learning management systems.",
@@ -413,20 +437,20 @@ export const PROJECT_DETAIL_DATA: Record<string, ProjectDetailData> = {
     ] as ProjectFeatureNotNumType[],
     troubleshooting: [
       {
-        title: "Normalizing Disparate Ministry Syllabi into Validated Relational JSON Schemas",
+        title: "Normalizing Disparate Ministry Syllabi into Structured JSON Datasets",
         found: [
           "Moroccan Ministry of National Education (MEN) curriculum guidelines existed only in non-standardized PDF formats with conflicting subject terminology between standard Arabic streams and International Option (BIOF) French curricula. Inconsistent coefficient definitions risked incorrect GPA calculations in downstream apps.",
         ],
         process: [
-          "Designed three strict relational JSON schemas (curriculum.json, devoirs.json, exams.json).",
-          "Built an automated Python validation test harness (validate.py) enforcing schema constraints, unique lesson IDs, valid branch mappings, and mathematically verified Baccalaureate formula weights (50% National + 25% Regional + 25% Continuous Assessment).",
-          "Implemented comprehensive CI test workflows to validate JSON syntax, required fields, and integrity on every push.",
+          "Designed three structured JSON datasets (curriculum.json, devoirs.json, exams.json).",
+          "Recorded the Baccalaureate formula weights (50% National + 25% Regional + 25% Continuous Assessment) alongside the exam data.",
+          "Set up a CI workflow that runs a Python script (validate.py) to check the JSON files.",
         ],
         result: [
-          "A clean, regression-tested open-source dataset with automated CI validation covering all high school streams.",
+          "A clean open-source dataset with automated CI checks, covering all high school streams.",
         ],
         lesson: [
-          "Open data engineering requires programmatic schema validation contracts before publishing to ensure downstream consumer reliability.",
+          "Open data needs automated checks before publishing so that people building on it can rely on it.",
         ],
       },
     ],

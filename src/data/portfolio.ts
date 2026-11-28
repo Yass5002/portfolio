@@ -103,6 +103,17 @@ export const skills: Skill[] = [
 
 export const projectsFeatured: Project[] = [
   {
+    title: "Sentinel",
+    en: "Dead Man's Switch",
+    thumb: "/assets/projects/sentinel_thumbnail.png",
+    desc: "A resilient Dead Man's Switch platform with a Go API backend and Flutter mobile client featuring real-time GPS tracking, passwordless OTP auth, and automated email alerts.",
+    type: "Side Project",
+    path: "/portfolio/sentinel",
+    links: [
+      { label: "GitHub", href: "https://github.com/Yass5002/sentinel" },
+    ],
+  },
+  {
     title: "mehro-paste",
     en: "Encrypted Paste",
     thumb: "/assets/projects/mehropaste_thumbnail.png",
@@ -115,37 +126,15 @@ export const projectsFeatured: Project[] = [
     ],
   },
   {
-    title: "Moroccan Educational System",
-    en: "Open Data",
-    thumb: "/assets/projects/moroccan_edu_thumbnail.png",
-    desc: "Standardized JSON dataset of the Moroccan national curriculum, continuous assessments, and official unified exam frameworks.",
+    title: "Magisk Hub",
+    en: "Module Directory",
+    thumb: "/assets/projects/magiskhub_thumbnail.png",
+    desc: "A directory of Android root modules that stays up to date from each project's releases.",
     type: "Open Source",
-    path: "/portfolio/moroccanedu",
+    path: "/portfolio/magiskhub",
     links: [
-      { label: "GitHub", href: "https://github.com/Yass5002/moroccan-educational-system" },
-    ],
-  },
-  {
-    title: "mehro",
-    en: "Portfolio Website",
-    thumb: "/assets/projects/mehro_thumbnail.png",
-    desc: "A personal portfolio and interactive digital hub featuring live Discord presence streaming, Spotify listening activity via Discord RPC, and a self-hosted SQLite view counter.",
-    type: "Personal",
-    path: "/portfolio/mehro",
-    links: [
-      { label: "Live ↗", href: "https://mehro.me/" },
-      { label: "GitHub", href: "https://github.com/Yass5002/mehro" },
-    ],
-  },
-  {
-    title: "Sentinel",
-    en: "Dead Man's Switch",
-    thumb: "/assets/projects/sentinel_thumbnail.png",
-    desc: "A resilient Dead Man's Switch platform with a Go API backend and Flutter mobile client featuring real-time GPS tracking, passwordless OTP auth, and encrypted alert delivery.",
-    type: "Side Project",
-    path: "/portfolio/sentinel",
-    links: [
-      { label: "GitHub", href: "https://github.com/Yass5002/sentinel" },
+      { label: "Live ↗", href: "https://magisk.yssn.tech" },
+      { label: "GitHub", href: "https://github.com/Yass5002/magisk-hub" },
     ],
   },
   {
@@ -168,6 +157,17 @@ export const projectsFeatured: Project[] = [
     path: "/portfolio/alamal",
     links: [
       { label: "GitHub", href: "https://github.com/Yass5002/alamal" },
+    ],
+  },
+  {
+    title: "Moroccan Educational System",
+    en: "Open Data",
+    thumb: "/assets/projects/moroccan_edu_thumbnail.png",
+    desc: "Standardized JSON dataset of the Moroccan national curriculum, continuous assessments, and official unified exam frameworks.",
+    type: "Open Source",
+    path: "/portfolio/moroccanedu",
+    links: [
+      { label: "GitHub", href: "https://github.com/Yass5002/moroccan-educational-system" },
     ],
   }
 ];
